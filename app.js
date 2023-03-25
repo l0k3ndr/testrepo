@@ -13,7 +13,11 @@ angular.module('tabFormApp', ['ui.bootstrap'])
             favoriteColor: ''
         };
 
-        $scope.submitForm = function () {
-            console.log('Form submitted:', $scope.formData);
+        $scope.submitSunSignForm = function () {
+            console.log('Sun Sign submitted:', $scope.formData.sunSign);
+        };
+
+        $scope.submitFavoriteColorForm = function () {
+            console.log('Favorite Color submitted:', $scope.formData.favoriteColor);
         };
     }]);
