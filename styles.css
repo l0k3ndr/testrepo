@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+uib-tabset {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.option-row {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.option-row:hover {
+    background-color: #f8f9fa;
+}
+
+.option-row input[type="radio"] {
+    margin-right: 10px;
+}
+
+.option-row.selected {
+    border: 1px solid #007bff;
+    background-color: #e9ecef;
+}
+

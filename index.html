@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tabFormApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="TabFormController">
+    <div class="container">
+        <h1>Tabbed Form</h1>
+        <form name="tabForm" ng-submit="submitForm()">
+            <uib-tabset>
+                <uib-tab heading="Sun Sign">
+                    <div ng-repeat="sign in sunSigns" class="option-row" ng-class="{'selected': formData.sunSign === sign}">
+                        <input type="radio" id="{{sign}}" name="sunSign" ng-model="formData.sunSign" ng-value="sign">
+                        <label for="{{sign}}">{{sign}}</label>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Favorite Color">
+                    <div ng-repeat="color in favoriteColors" class="option-row" ng-class="{'selected': formData.favoriteColor === color}">
+                        <input type="radio" id="{{color}}" name="favoriteColor" ng-model="formData.favoriteColor" ng-value="color">
+                        <label for="{{color}}">{{color}}</label>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
